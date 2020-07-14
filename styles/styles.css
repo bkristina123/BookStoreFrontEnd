@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.view {
+    margin-top: -56px;
+}
+.navbar {
+    z-index: 1;
+}
+html,
+body,
+header,
+.view {
+    height: 100%;
+}
+
+.cart-container {
+    border: 2px solid black;
+    border-radius: 7px;
+    min-height: 130px;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.book-title {
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.book-description {
+    font-size: medium;
+
+}
+
+.book-price {
+    font-style: italic;
+}
+
+.cart-headings {
+    margin-bottom: 25px;
+}
