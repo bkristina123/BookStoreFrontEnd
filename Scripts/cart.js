@@ -1,20 +1,20 @@
 
+function initCart() {
+    var storage = localStorage.getItem("cartItems");
 
-var storage = localStorage.getItem("cartItems");
-
-for (let i = 0; i < storage.length; i++) {
+    for (let i = 0; i < storage.length; i++) {
 
 
-    axios.get(`https://localhost:44305/api/books/${storage[i]}`)
-    .then(function (response) {
-        
-        createCart(response.data);
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
+        axios.get(`https://localhost:44305/api/books/${storage[i]}`)
+            .then(function (response) {
 
-    
+                createCart(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+    }
 }
 
 function createCart(item) {
@@ -55,5 +55,40 @@ function createCart(item) {
 }
 
 
+function createOrder() {
+
+    var name = document.getElementById("name").value;
+    var surname = document.getElementById("surname").value;
+    var phone = document.getElementById("phone").value;
+    var address = document.getElementById("address").value;
+
+    var storage = localStorage.getItem("cartItems");
+
+    // axios.post('https://localhost:44305/api/order', {
+    //         name: name,
+    //         surname: surname,
+    //         address: address,
+    //         phone: phone,
+    //         bookIds : storage
+    //     })
+    //     .then(function (response) {
+    //         console.log(response.data);
+    //         alert(`Thanks for ordering`);
+    //         storageService.ClearStorage("cartItems");
+    //         location.href = "./index.html"
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error);
+    //     });
+
+    console.log(name);
+    console.log(surname);
+    console.log(address);
+    console.log(phone);
+    console.log(storage);
+}
+
+
+initCart();
 
 

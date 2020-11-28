@@ -44,6 +44,10 @@ storageService = {
         }
     
         return exists;
+    },
+
+    ClearStorage(storageKey) {
+        localStorage.removeItem(storageKey);
     }
 
 }
